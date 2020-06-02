@@ -4,9 +4,11 @@ export class Constants {
     Categories: '/api/categories',
     Orders: '/api/orders',
     Users: '/api/users',
-    Products: '/api/products'
+    Products: '/api/products',
+    ProductOrders: '/api/productOrders'
   };
   static LocalStorageKey = {
-    CurrentUser: 'currentUser'
+    CurrentUser: 'currentUser',
+    LanguageSelected: 'selectedLanguage'
   };
 }

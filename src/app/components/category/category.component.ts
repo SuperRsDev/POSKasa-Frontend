@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 
 import { UserModel } from '../../_models/user.model';
-import {UserService} from '../../_services/api/user.service';
+import {UserApiService} from '../../_services/api/user-api.service';
 
 @Component({
     templateUrl: 'category.component.html'
@@ -9,7 +9,7 @@ import {UserService} from '../../_services/api/user.service';
 
 export class CategoryComponent implements OnInit {
 
-    constructor(private userService: UserService) {
+    constructor(private userService: UserApiService) {
     }
 
     ngOnInit() {

@@ -1,0 +1,19 @@
+<nav class="navbar navbar-default" *ngIf="isLoggedIn">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">POS</a>
+    </div>
+    <ul class="nav navbar-nav">
+      <li class="active"><a href="#">Home</a></li>
+    </ul>
+    <ul class="nav navbar-nav navbar-right">
+      <li class="p-2">
+        <img src="/assets/images/bih-flag.png" height="40" width="40" (click)="selectLanguage('bs')" alt="Bh flag"/>
+      </li>
+      <li class="p-2">
+        <img src="/assets/images/gb-flag.png" height="40" width="40" (click)="selectLanguage('en')" alt="Gb flag"/>
+      </li>
+      <li><a (click)="logout">Logout</a></li>
+    </ul>
+  </div>
+</nav>

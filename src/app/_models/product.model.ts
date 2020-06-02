@@ -5,6 +5,6 @@ export class ProductModel {
     status: string;
     description: string;
     unitPrice: string;
-    sellingPrice: string;
+    sellingPrice: number;
     categoryId: string;
 }

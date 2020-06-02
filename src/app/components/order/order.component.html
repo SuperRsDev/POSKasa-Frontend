@@ -1,3 +1,25 @@
-<div class="col-md-6 col-md-offset-3">
+<div>
+  <div>
+    <p class="header-label">{{'order_label'|translate}}</p>
+  </div>
+  <div>
+    <div class="product-container">
+      <div *ngFor="let productVm of (selectedProducts)" class="product-col row">
+        <span class="order-product col-md-8 p-5">{{productVm.product.name}}</span>
+        <span class="order-quantity col-md-2 p-5">{{productVm.quantity}}</span>
+        <span class="col-md-2 ps-5 remove-order-container" (click)="removeProduct(productVm)">
+          <span class="remove-order glyphicon glyphicon-minus" aria-hidden="true" ></span>
+        </span>
+      </div>
+    </div>
 
+
+    <div class="product-order-total p-5 m-5">
+      {{totalPrice}} KM
+    </div>
+
+    <div>
+      <app-order-payment-method></app-order-payment-method>
+    </div>
+  </div>
 </div>

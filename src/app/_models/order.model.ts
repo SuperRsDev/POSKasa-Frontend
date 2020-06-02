@@ -1,5 +1,8 @@
 export class OrderModel {
-    id: number;
-    username: string;
-    password: string;
+    id?: number;
+    employeeId: number;
+    paymentTypeId: number;
+    date: string;
+    status: string;
+    orderType: string;
 }

@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import {UserService} from '../../_services/api/user.service';
+import {UserApiService} from '../../_services/api/user-api.service';
 import {AlertService} from '../../_services/alert.service';
 
 @Component({
@@ -13,7 +13,7 @@ export class RegisterComponent {
 
     constructor(
         private router: Router,
-        private userService: UserService,
+        private userService: UserApiService,
         private alertService: AlertService) { }
 
     register() {

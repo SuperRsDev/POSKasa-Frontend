@@ -1,0 +1,14 @@
+<div *ngIf="selectedCategory">
+  <p class="header-label">{{selectedCategory.name}}</p>
+</div>
+<div class="row">
+  <div class="col-sm-6 col-md-4" *ngFor="let product of products" (click)="selectProduct(product)">
+    <div class="thumbnail">
+      <img src="/assets/images/default-product.jpg" alt="Product">
+      <div class="caption">
+        <h4>{{product.name}}</h4>
+        <p class="selling-price">{{product.sellingPrice}} KM</p>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+{
+  "search_category_key": "Search category: ",
+  "employee_username_label": "Employee: ",
+  "date_label": "Date: ",
+  "time_label": "Time: ",
+  "order_label": "Order",
+  "order_payment_type_card": "Card",
+  "order_payment_type_cash": "Cash",
+  "order_payment_type_estimate": "Estimate"
+}

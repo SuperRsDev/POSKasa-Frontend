@@ -1,17 +1,18 @@
 import { Component, OnInit } from '@angular/core';
 
 import { UserModel } from '../../_models/user.model';
-import {UserService} from '../../_services/api/user.service';
+import {UserApiService} from '../../_services/api/user-api.service';
 
 @Component({
-    templateUrl: 'home.component.html'
+    templateUrl: 'home.component.html',
+    styleUrls: ['./home.component.scss']
 })
 
 export class HomeComponent implements OnInit {
     currentUser: UserModel;
     users: UserModel[] = [];
 
-    constructor(private userService: UserService) {
+    constructor(private userService: UserApiService) {
         this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
     }
 

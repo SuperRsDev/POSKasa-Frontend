@@ -1,6 +1,27 @@
-<div class="col-md-6 col-md-offset-3">
-  <div *ngFor="let category in categories">
-    <div>{{category.name}}</div>
-    <div>{{category.description}}</div>
+<div>
+  <div class="col-lg-12">
+    <div class="input-group">
+      <input type="search" class="form-control" placeholder="{{'search_category_key' | translate}}" [(ngModel)]="searchText">
+      <span class="input-group-btn">
+        <button class="btn btn-primary" type="button" *ngIf="categoriesSearchText" (click)="clearText()">
+          <span class="glyphicon glyphicon-remove" aria-hidden="true" ></span>
+        </button>
+        <button class="btn btn-primary" type="button" (click)="searchCategories()">
+          <span class="glyphicon glyphicon-search" aria-hidden="true"></span>
+        </button>
+      </span>
+    </div><!-- /input-group -->
   </div>
+
+  <div class="col-lg-12">
+    <div (click)="selectCategory(category)"
+         *ngFor="let category of (categories | filter: categoriesSearchText : 'Category') as filteredCategories">
+      <div class="category-name" [ngClass]="{ 'active-category' : selectedCategory === category }">{{category.name}}</div>
+    </div>
+
+    <div *ngIf="(categories | filter: categoriesSearchText : 'Category').length <1" class="no-categories-found">
+      No Categories Found
+    </div>
+  </div>
+
 </div>

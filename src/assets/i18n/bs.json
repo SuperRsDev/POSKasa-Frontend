@@ -1,0 +1,10 @@
+{
+  "search_category_key": "Pretrazi kategoriju: ",
+  "employee_username_label": "Uposlenik: ",
+  "date_label": "Datum: ",
+  "time_label": "Vrijeme: ",
+  "order_label": "Narudzba",
+  "order_payment_type_card": "Kartica",
+  "order_payment_type_cash": "Gotovina",
+  "order_payment_type_estimate": "Predracun"
+}

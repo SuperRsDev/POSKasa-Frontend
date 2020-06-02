@@ -1,0 +1,44 @@
+@import "./../../../variables";
+
+.product-col {
+  padding-top: 5px;
+  padding-bottom: 5px;
+  margin: 5px;
+}
+
+.product-container {
+  height: 45vh;
+}
+
+.order-product {
+  background-color: $orderBtnDefault;
+  text-align: center;
+}
+
+.order-quantity {
+  background-color: greenyellow;
+  text-align: center;
+}
+
+.remove-order {
+  text-align: center;
+  border-radius: 50%;
+  background-color: red;
+  color: white;
+  padding: 10px;
+}
+
+.remove-order-container {
+  margin-top: -3px;
+}
+
+.product-order-total {
+  background-color: greenyellow;
+  text-align: center;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  font-weight: bold;
+  font-size: 3.2rem;
+}
+
+

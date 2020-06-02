@@ -1,6 +1,10 @@
-<div class="col-md-6 col-md-offset-3">
-    <h1>Hi {{currentUser.firstName}}!</h1>
-    <p>You're logged in</p>
-    <h3>All registered users:</h3>
-    <p><a [routerLink]="['/login']">Logout</a></p>
+<div class="col-lg-2 side-nav full-height">
+  <app-category-list></app-category-list>
+  <app-user-info></app-user-info>
+</div>
+<div class="col-lg-8 main-container full-height">
+  <app-category-products></app-category-products>
+</div>
+<div class="col-lg-2 side-nav full-height">
+  <app-order></app-order>
 </div>
