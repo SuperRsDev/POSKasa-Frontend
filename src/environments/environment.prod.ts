@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  baseUri: 'http://localhost:8080'
+  baseUri: 'https://poskasa-api.herokuapp.com'
 };

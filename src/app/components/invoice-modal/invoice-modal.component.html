@@ -3,15 +3,21 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content">
       <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="removeInvoice()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        <h4 class="modal-title" id="myModalLabel">{{'invoice_title' |translate}}</h4>
       </div>
       <div class="modal-body">
+        <div class="col-md-offset-4">
+          <button type="button" class="btn btn-default" data-dismiss="modal" (click)="removeInvoice()">{{'close_invoice_modal_label' |translate}}</button>
+          <button type="button" class="btn btn-default col-md-offset-1">{{'print_invoice_modal_label' |translate}}</button>
+        </div>
+        <br>
         <app-order-invoice></app-order-invoice>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
+
       </div>
     </div>
   </div>

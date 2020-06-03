@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 
 import { UserModel } from '../../_models/user.model';
-import {UserApiService} from '../../_services/api/user-api.service';
 
 @Component({
     templateUrl: 'user-info.component.html',
     selector: 'app-user-info',
+  styleUrls: ['./user-info.component.scss']
 })
 
 export class UserInfoComponent implements OnInit {

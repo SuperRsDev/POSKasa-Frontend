@@ -2,7 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import {AuthenticationService} from '../../_services/api/authentication.service';
 import {AlertService} from '../../_services/alert.service';
-import {Constants} from '../../_helpers/constants';
 
 @Component({
     templateUrl: 'login.component.html'
@@ -33,7 +32,7 @@ export class LoginComponent implements OnInit {
                   this.router.navigate([this.returnUrl]);
                 },
                 error => {
-                    this.alertService.error(error);
+                    this.alertService.error(error.error.error);
                 });
     }
 }

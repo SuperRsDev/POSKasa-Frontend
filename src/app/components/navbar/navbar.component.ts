@@ -20,11 +20,14 @@ export class NavbarComponent implements OnInit {
 
     ngOnInit() {
       this.isLoggedIn = this.authService.isLoggedIn;
+      this.authService.getIsUserLoggedIn().subscribe((loggedIn) => {
+        this.isLoggedIn = loggedIn;
+      });
     }
 
     public logout() {
       this.authService.logout();
-      this.router.navigate(['/']);
+      this.router.navigate(['/login']);
     }
 
     public selectLanguage(language: string) {

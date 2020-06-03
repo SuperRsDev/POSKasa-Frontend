@@ -20,6 +20,11 @@ export class ProductService {
     return this.productsSelected;
   }
 
+  public notifyProductsRemovedChange() {
+    this.productsSelected = [];
+    this.productsSelectionChanged$.next(this.productsSelected);
+  }
+
   public notifyProductsSelectionChanged(value: ProductModel) {
     this.lastProductSelected = value;
     this.updateSelectedProducts(value, CrudMode.Add);

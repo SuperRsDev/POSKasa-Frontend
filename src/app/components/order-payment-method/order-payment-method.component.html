@@ -1,7 +1,7 @@
 <div>
   <div *ngFor="let type of (paymentTypes)" class="product-container">
     <button class="btn-group btn-group-lg col-lg-12 p-5 m-4 order-payment-type" (click)="selectPaymentType(type)"
-            role="group" aria-label="{{type.name | translate}}" >
+            role="group">
       {{type.name | translate}}
     </button>
   </div>

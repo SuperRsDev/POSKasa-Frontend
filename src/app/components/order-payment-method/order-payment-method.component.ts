@@ -9,6 +9,7 @@ import {ProductService} from '../../_services/product.service';
 import {Observable, forkJoin } from 'rxjs';
 import {ProductOrderApiService} from '../../_services/api/product-order-api.service';
 import {OrderModel} from '../../_models/order.model';
+import {ProductOrderModel} from '../../_models/product-order.model';
 
 @Component({
     templateUrl: 'order-payment-method.component.html',
@@ -36,13 +37,15 @@ export class OrderPaymentMethodComponent implements OnInit {
       this.orderService.notifyPaymentTypeChanged(type);
       const user = this.authService.getCurrentUser();
       const order = {
-        employeeId: user.id,
+        employeeId: user.userId,
         paymentTypeId: this.selectedPaymentType.id,
         date: new Date().toLocaleDateString(),
         status: 'Active',
         orderType: 'new'
       };
+
       this.orderApiService.create(order).subscribe((createdOrder: OrderModel) => {
+        this.orderService.notifyOrderCreated(createdOrder);
         const products = this.productService.getProductsSelected();
         const productOrderRequests: Observable<any>[] = products.map((product) => {
           return this.productOrderApiService.create({

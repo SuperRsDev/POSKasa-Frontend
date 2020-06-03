@@ -1,14 +1,14 @@
-<div class="col-md-11 col-md-offset-1">
-  <div>
-    <label>{{'employee_username_label' | translate}}</label>
-    <span>{{currentUser.username}}</span>
+<div class="col-md-12">
+  <div class="user-info-container row">
+    <label class="user-info-label col-md-5">{{'employee_username_label' | translate}}</label>
+    <span class="user-info-value col-md-6">{{currentUser.username}}</span>
   </div>
-  <div>
-    <label>{{'date_label' | translate}}</label>
-    <span>{{now.toLocaleDateString("en-US")}}</span>
+  <div class="user-info-container row">
+    <label class="user-info-label col-md-5">{{'date_label' | translate}}</label>
+    <span class="user-info-value col-md-6">{{now.toLocaleDateString("en-US")}}</span>
   </div>
-  <div>
-    <label>{{'time_label' | translate}}</label>
-    <span>{{now.getHours() + ":" + now.getMinutes()}}</span>
+  <div class="user-info-container row">
+    <label class="user-info-label col-md-5">{{'time_label' | translate}}</label>
+    <span class="user-info-value col-md-6">{{now.getHours() + ":" + now.getMinutes()}}</span>
   </div>
 </div>
