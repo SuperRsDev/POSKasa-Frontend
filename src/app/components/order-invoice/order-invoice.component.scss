@@ -1,7 +1,14 @@
-.invoice-container {
+.order-invoice-container {
   background-color: white;
+  font-weight: 500;
+  font-size: 1.8rem;
 }
 
 .invoice-header {
   border-top: 1px black dashed;
+  padding-top: 10px;
+}
+
+.text-center {
+  text-align: center;
 }

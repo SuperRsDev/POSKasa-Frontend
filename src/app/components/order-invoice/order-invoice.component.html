@@ -1,29 +1,62 @@
-<div class="invoice-container">
+<div class="order-invoice-container" id="orderInvoice">
   <div class="invoice-header">
-    <p class="company-name"></p>
-    <p class="company-address"></p>
-    <p class="company-town"></p>
+    <p class="company-name">{{companyInfo.name}}</p>
+    <p class="company-address">{{companyInfo.address}}</p>
+    <p class="company-town">{{companyInfo.town}}</p>
   </div>
   <div class="invoice-header">
-    <p class="employee-name"></p>
-    <p class="invoice-number row">
-      <span class="col-md-4"></span>
-      <span class="col-md-4"></span>
-      <span class="col-md-4"></span>
+    <p class="employee-name">
+      <label>{{'employee_username_label'|translate}}</label>
+      <span>{{currentUser.userId}}</span>
     </p>
-    <div class="invoice-items-header">
+    <p class="invoice-number row">
+      <span class="col-md-6">
+        <label>{{'invoice_number_label'|translate}}:</label>
+        <span>{{order.id}}</span>
+      </span>
+      <span class="col-md-3">
+        {{order.date|date:'mediumDate'}}
+      </span>
+      <span class="col-md-3">
+        {{order.date|date: 'shortTime'}}
+      </span>
+    </p>
+    <div class="invoice-items-header invoice-header">
       <div class="row">
-        <p class="col-md-6"></p>
-        <p class="col-md-2"></p>
-        <p class="col-md-2"></p>
-        <p class="col-md-2"></p>
+        <p class="col-md-6">{{'invoice_product_name_header'|translate}}</p>
+        <p class="col-md-2">{{'invoice_product_quantity_header'|translate}}</p>
+        <p class="col-md-2">{{'invoice_product_price_header'|translate}}</p>
+        <p class="col-md-2">{{'invoice_product_sum_header'|translate}}</p>
+      </div>
+      <div class="row" *ngFor="let product of products">
+        <p class="col-md-6">{{product.product.name}}</p>
+        <p class="col-md-2">{{product.quantity}}</p>
+        <p class="col-md-2">{{product.product.sellingPrice}}</p>
+        <p class="col-md-2">{{product.product.sellingPrice * product.quantity}}</p>
+      </div>
+    </div>
+    <div class="invoice-header">
+      <div class="row">
+        <p class="col-md-6">{{'invoice_product_sum_header'|translate}}</p>
+        <p class="col-md-6">
+          <span class="pull-right">{{totalPrice}} KM</span>
+        </p>
       </div>
       <div class="row">
-        <p class="col-md-6"></p>
-        <p class="col-md-2"></p>
-        <p class="col-md-2"></p>
-        <p class="col-md-2"></p>
+        <p class="col-md-6">{{'invoice_product_pdv_label'|translate}}</p>
+        <p class="col-md-6">
+          <span class="pull-right">0 KM</span>
+        </p>
       </div>
+      <div class="row">
+        <p class="col-md-6">{{'invoice_product_total_label'|translate}}</p>
+        <p class="col-md-6">
+          <span class="pull-right">{{totalPrice}} KM</span>
+        </p>
+      </div>
+    </div>
+    <div class="invoice-header text-center">
+      <p>Pos Kasa NRS</p>
     </div>
   </div>
 </div>

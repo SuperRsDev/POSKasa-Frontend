@@ -28,5 +28,12 @@
   "print_invoice_modal_label": "Isprintaj",
   "invoice_title": "Racun",
   "logout_label": "Odloguj se",
-  "home_label": "Naslovna"
+  "home_label": "Naslovna",
+  "invoice_number_label": "Broj racuna",
+  "invoice_product_name_header": "Naziv",
+  "invoice_product_quantity_header": "Kolicina",
+  "invoice_product_price_header": "Cijena",
+  "invoice_product_sum_header": "Iznos",
+  "invoice_product_total_label": "Ukupno",
+  "invoice_product_pdv_label": "PDV"
 }

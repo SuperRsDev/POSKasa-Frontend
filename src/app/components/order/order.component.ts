@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 
 import {ProductService} from '../../_services/product.service';
 import {ProductViewModel} from '../../_models/product.viewmodel';
+import {ProductHelper} from '../../_helpers/product.helper';
 
 @Component({
     templateUrl: 'order.component.html',
@@ -29,9 +30,6 @@ export class OrderComponent implements OnInit {
     }
 
     private setTotalPrice() {
-      this.totalPrice = this.selectedProducts.map((prod) => prod.product.sellingPrice * prod.quantity)
-        .reduce((totalPrice: number, currentPrice: number) => {
-        return totalPrice + currentPrice;
-      }, 0);
+      this.totalPrice = ProductHelper.getTotalPrice(this.selectedProducts);
     }
 }

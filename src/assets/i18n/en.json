@@ -28,5 +28,12 @@
   "print_invoice_modal_label": "Print",
   "invoice_title": "Invoice",
   "logout_label": "Logout",
-  "home_label": "Home"
+  "home_label": "Home",
+  "invoice_number_label": "Invoice number",
+  "invoice_product_name_header": "Name",
+  "invoice_product_quantity_header": "Quantity",
+  "invoice_product_price_header": "Price",
+  "invoice_product_sum_header": "Amount",
+  "invoice_product_total_label": "Total",
+  "invoice_product_pdv_label": "PDV"
 }

@@ -9,7 +9,6 @@ import {ProductService} from '../../_services/product.service';
 import {Observable, forkJoin } from 'rxjs';
 import {ProductOrderApiService} from '../../_services/api/product-order-api.service';
 import {OrderModel} from '../../_models/order.model';
-import {ProductOrderModel} from '../../_models/product-order.model';
 
 @Component({
     templateUrl: 'order-payment-method.component.html',
@@ -45,7 +44,7 @@ export class OrderPaymentMethodComponent implements OnInit {
       };
 
       this.orderApiService.create(order).subscribe((createdOrder: OrderModel) => {
-        this.orderService.notifyOrderCreated(createdOrder);
+
         const products = this.productService.getProductsSelected();
         const productOrderRequests: Observable<any>[] = products.map((product) => {
           return this.productOrderApiService.create({
@@ -56,7 +55,7 @@ export class OrderPaymentMethodComponent implements OnInit {
         });
 
         forkJoin(productOrderRequests).subscribe(results => {
-          BaseHelper.getJquery()('#invoiceModalId').modal('show');
+          this.orderService.notifyOrderCreated(createdOrder);
         });
       });
     }
